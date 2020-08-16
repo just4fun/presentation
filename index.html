@@ -1,40 +1,167 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>Micro Frontends Presentation - Zoro Jiang</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/moon.css" id="theme">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Slide 1 -->
+        <section data-markdown>
+          # Micro Frontends
+          #### Zoro Jiang
+          #### Aug 17 2020
+        </section>
+        <!-- Slide 2 -->
+        <section>
+          <section data-markdown>
+            ## Definition
+          </section>
+          <section data-markdown>
+            "An architectural style where independently deliverable frontend applications are composed into a greater whole"   
+            https://martinfowler.com/articles/micro-frontends.html
+          </section>
+        </section>
+        <!-- Slide 3 -->
+        <section>
+          <section data-markdown>
+            ## History
+          </section>
+          <section data-markdown>
+            1. The term first came up in [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar/techniques/micro-frontends) at the end of 2016
+          </section>
+          <section>
+            2. Not new concept. Extending the microservices idea to frontend development
+          </section>
+        </section>
+        <!-- Slide 4 -->
+        <section>
+          <section data-markdown>
+            ## Evolution
+          </section>
+          <section data-markdown>
+            ![evolution](https://user-images.githubusercontent.com/7512625/90331572-1cfd7200-dfe8-11ea-9fa8-27ac3e81ed6f.jpg)
+            https://blog.bitsrc.io/state-of-micro-frontends-9c0c604ed13a
+          </section>
+        </section>
+        <!-- Slide 5 -->
+        <section>
+          <section data-markdown>
+            ## Benefits
+          </section>
+          <section>
+            1. Simple, decoupled codebases
+          </section>
+          <section>
+            2. Different technologies (frameworks) are acceptable
+          </section>
+          <section>
+            3. Independent deployment
+          </section>
+          <section data-markdown>
+            ![independent-deployment](https://martinfowler.com/articles/micro-frontends/deployment.png)
+            https://martinfowler.com/articles/micro-frontends.html
+          </section>
+        </section>
+        <!-- Slide 6 -->
+        <section>
+          <section data-markdown>
+            ## Demo 1
+            #### Compose independent frontend apps into one
+            #### https://github.com/micro-frontends-demo
+          </section>
+          <section>
+            1. Container app (Whatever. E.g. Rails, next.js, etc)
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ```js
+              fetch(`${host}/asset-manifest.json`)
+                .then(res => res.json())
+                .then(manifest => {
+                  const script = document.createElement('script');
+                  script.id = scriptId;
+                  script.crossOrigin = '';
+                  script.src = `${host}${manifest['main.js']}`;
+                  script.onload = this.renderMicroFrontend;
+                  document.head.appendChild(script);
+                });
+              ```
+            </textarea>
+          </section>
+          <section>
+            2. Micro frontend app (create-react-app)
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              ```json
+                {
+                  "main.js": "/static/js/main.27ba7479.js",
+                  "main.js.map": "/static/js/main.27ba7479.js.map",
+                  "index.html": "/index.html",
+                  "precache-manifest.f87668a4635614f2a4309eaa4e3e3147.js": "/precache-manifest.f87668a4635614f2a4309eaa4e3e3147.js",
+                  "service-worker.js": "/service-worker.js"
+                }
+              ```
+              https://github.com/danethurber/webpack-manifest-plugin
+            </textarea>
+          </section>
+        </section>
+        <!-- Slide 7 -->
+        <section data-markdown>
+          ## Demo 2
+          #### Yet another approach to integrate React SPA into Rails app
+        </section>
+        <!-- Slide 8 -->
+        <section>
+          <section data-markdown>
+            ## More integration approaches
+          </section>
+          <section data-markdown>
+            - Server-side template composition
+            - Build-time integration (micro frontend as package)
+            - iframe
+            - Web Component
+          </section>
+        </section>
+        <!-- Slide 9 -->
+        <section>
+          <section data-markdown>
+            ## More related topics
+          </section>
+          <section data-markdown>
+            - BFF (Backend for Frontend)
+            - SFF (Serverless for Frontend)
+          </section>
+        </section>
+      </section>
+      </div>
+    </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
 </html>
