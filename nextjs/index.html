@@ -1,40 +1,282 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>Next.js Presentation - Zoro Jiang</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/moon.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Slide 1 -->
+        <section data-markdown>
+          # Next.js
+          #### Zoro Jiang
+          #### Jul 04 2022
+        </section>
+        <!-- Slide 2 -->
+        <section>
+          <section data-markdown>
+            # What
+          </section>
+          <section>
+            <p>
+              The React Framework for Production
+            </p>
+            <p class="fragment fade-in">
+              ... with SSR (Server Side Rendering)
+            </p>
+          </section>
+        </section>
+        <!-- Slide 3 -->
+        <section>
+          <section data-markdown>
+            # Data Fetching
+          </section>
+          <section data-markdown>
+            - CSR: Client Side Rendering
+            - SSR: Server Side Rendering
+            - SSG: Static Site Generation
+            - ISR: Incrementail Static Regeneration
+          </section>
+        </section>
+        <!-- Slide 4 -->
+        <section>
+          <section data-markdown>
+            ## Client Side Rendering
+          </section>
+          <section data-markdown>
+            ![csr](https://user-images.githubusercontent.com/7512625/177043678-1ad33408-8a71-4bc5-89ab-b8a15666dbb9.png)
+            The Image is taken from [Shaundai Person](https://twitter.com/shaundai)'s talk in [React Conf 2021](https://conf.reactjs.org/stage).
+          </section>
+          <section>
+            <p>
+              The most popular CSR framework for React
+            </p>
+            <p class="fragment fade-in">
+              <a href="https://create-react-app.dev/" target="_blank">https://create-react-app.dev/</a>
+            </p>
+          </section>
+          <section data-markdown>
+            ## Align Apps
+          </section>
+          <section data-markdown>
+            ![smile_view](https://user-images.githubusercontent.com/7512625/177044533-8e7f4476-0a82-41d4-ae0d-0f6c7a4d3648.png)
+            [https://smile-view.invisalign.com.sg/?campaign_name=SmileView-Consumer_SG_Singapore-Consumer](https://smile-view.invisalign.com.sg/?campaign_name=SmileView-Consumer_SG_Singapore-Consumer)
+          </section>
+          <section>
+            <h3>
+              One more question...
+            </h3>
+            <h5 class="fragment fade-in">
+              How smile view (built with create-react-app) works with API?
+            </h5>
+            <p class="fragment fade-in">
+              <a href="https://github.com/just4fun/cra-node-boilerplate" target="_blank">https://github.com/just4fun/cra-node-boilerplate</a>
+            </p>
+          </section>
+        </section>
+        <!-- Slide 5 -->
+        <section>
+          <section data-markdown>
+            ## Server Side Rendering
+          </section>
+          <section data-markdown>
+            ![ssr](https://user-images.githubusercontent.com/7512625/177043680-7b1746de-8022-4a35-99f9-e12fcd577e91.png)
+            The Image is taken from [Shaundai Person](https://twitter.com/shaundai)'s talk in [React Conf 2021](https://conf.reactjs.org/stage).
+          </section>
+          <section>
+            <p>
+              The most popular SSR framework for React
+            </p>
+            <p class="fragment fade-in">
+              <a href="https://nextjs.org/" target="_blank">https://nextjs.org/</a>
+            </p>
+          </section>
+          <section data-markdown>
+            ## Align Apps
+          </section>
+          <section data-markdown>
+            ![invisalign.com.sg](https://user-images.githubusercontent.com/7512625/177046719-9885b965-2d01-4640-a5f4-cc3232385e90.png)
+            [https://www.invisalign.com.sg/](https://www.invisalign.com.sg/)
+          </section>
+          <section data-markdown>
+            ![itero.com](https://user-images.githubusercontent.com/7512625/177046721-803ffedc-64e0-4347-950b-08b3c93e2950.png)
+            [https://itero.com/en-APAC](https://itero.com/en-APAC)
+          </section>
+        </section>
+        <!-- Slide 6 -->
+        <section>
+          <section data-markdown>
+            ## Code Examples
+            [https://blog.saeloun.com/2021/12/16/hydration.html](https://blog.saeloun.com/2021/12/16/hydration.html)
+          </section>
+          <section>
+            <p>
+              Basic React App
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```jsx
+                // index.js
+                const root = document.querySelector("#root");
+                ReactDOM.render(<App name="just4fun" />, root);
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+                // App.js
+                import React from "react";
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+                function App(props) {
+                  return (
+                    <div>
+                      Hey {props.name}!
+                    </div>
+                  )
+                }
+
+                export default App;
+                ```
+              </textarea>
+            </p>
+          </section>
+          <section>
+            <p>
+              The output before loading scripts on the client side:
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```html
+                <html>
+                  <head></head>
+                  <body>
+                    <div id="root"></div>
+                  </body>
+                </html>
+                ```
+              </textarea>
+            </p>
+          </section>
+          <section>
+            <p>
+              SSR App
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```js
+                // index.js
+                ReactDOM.hydrate(<App name="just4fun"/>, document.getElementById('root'));
+
+                //server.js
+                import React from "react";
+                import ReactDOMServer from "react-dom/server";
+
+                app.use("/", (req, res, next) => {
+                  fs.readFile(path.resolve("./build/index.html"), "utf-8", (err, data) => {
+                    if (err) {
+                      console.log(err);
+                      return res.status(500).send("Some error happened");
+                    }
+                    return res.send(ReactDOMServer.renderToString(<App name="Saeloun" />)
+                    )
+                  });
+                });
+
+                //App.js
+                import React from "react";
+
+                function App(props) {
+                  return (
+                    <div>
+                      Hey {props.name}!
+                    </div>
+                  )
+                }
+
+                export default App;
+                ```
+              </textarea>
+            </p>
+          </section>
+          <section>
+            <p>
+              The output before loading scripts on the client side:
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```html
+                <html>
+                  <head></head>
+                  <body>
+                    <div id="root">
+                      <h1>Hey just4fun!</h1>
+                    </div>
+                  </body>
+                </html>
+                ```
+              </textarea>
+            </p>
+          </section>
+          <section>
+            <p>
+              With Next.js, all you need is:
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```js
+                // pages/index.js
+                import React from "react";
+
+                function App(props) {
+                  return (
+                    <div>
+                      Hey {props.name}!
+                    </div>
+                  )
+                }
+
+                export default App;
+
+                export async function getServerSideProps(context) {
+                  return {
+                    props: {
+                      name: 'just4fun'
+                    }
+                  }
+                }
+                ```
+              </textarea>
+            </p>
+          </section>
+        </section>
+        <!-- Slide 7 -->
+        <section data-markdown>
+          ![recommended_toolchains](https://user-images.githubusercontent.com/7512625/177046319-ada86040-6410-45ed-bf75-5b390b5a70aa.png)
+          [https://reactjs.org/docs/create-a-new-react-app.html](https://reactjs.org/docs/create-a-new-react-app.html)
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
 </html>
