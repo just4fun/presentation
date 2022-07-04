@@ -260,6 +260,124 @@
           ![recommended_toolchains](https://user-images.githubusercontent.com/7512625/177046319-ada86040-6410-45ed-bf75-5b390b5a70aa.png)
           [https://reactjs.org/docs/create-a-new-react-app.html](https://reactjs.org/docs/create-a-new-react-app.html)
         </section>
+        <!-- Slide 8 -->
+        <section>
+          <section data-markdown>
+            # Routing
+          </section>
+          <section>
+            <p>
+              Declaratively
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```js
+                import Link from 'next/link'
+
+                function Home() {
+                  return (
+                    <ul>
+                      <li>
+                        <Link href="/">
+                          <a>Home</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/about">
+                          <a>About Us</a>
+                        </Link>
+                      </li>
+                    </ul>
+                  )
+                }
+
+                export default Home
+                ```
+              </textarea>
+            </p>
+          </section>
+          <section>
+            <p>
+              Imperatively
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```js
+                import { useRouter } from 'next/router'
+
+                export default function ReadMore() {
+                  const router = useRouter()
+
+                  return (
+                    <button onClick={() => router.push('/about')}>
+                      Click here to read more
+                    </button>
+                  )
+                }
+                ```
+              </textarea>
+            </p>
+          </section>
+        </section>
+        <!-- Slide 9 -->
+        <section>
+          <section data-markdown>
+            # Folder Structure
+          </section>
+          <section>
+            <p>
+              Declaratively
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```js
+                import Link from 'next/link'
+
+                function Home() {
+                  return (
+                    <ul>
+                      <li>
+                        <Link href="/">
+                          <a>Home</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/about">
+                          <a>About Us</a>
+                        </Link>
+                      </li>
+                    </ul>
+                  )
+                }
+
+                export default Home
+                ```
+              </textarea>
+            </p>
+          </section>
+          <section>
+            <p>
+              Imperatively
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```js
+                import { useRouter } from 'next/router'
+
+                export default function ReadMore() {
+                  const router = useRouter()
+
+                  return (
+                    <button onClick={() => router.push('/about')}>
+                      Click here to read more
+                    </button>
+                  )
+                }
+                ```
+              </textarea>
+            </p>
+          </section>
+        </section>
       </div>
     </div>
 
