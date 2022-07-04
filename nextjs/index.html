@@ -322,59 +322,70 @@
         <!-- Slide 9 -->
         <section>
           <section data-markdown>
-            # Folder Structure
+            # CSS Support
           </section>
           <section>
             <p>
-              Declaratively
+              CSS Modules
             </p>
             <p class="fragment fade-in" data-markdown>
               <textarea data-template>
                 ```js
-                import Link from 'next/link'
+                import React from "react"
+                import * as containerStyles from "./container.module.css"
 
-                function Home() {
+                export default function Container({ children }) {
                   return (
-                    <ul>
-                      <li>
-                        <Link href="/">
-                          <a>Home</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/about">
-                          <a>About Us</a>
-                        </Link>
-                      </li>
-                    </ul>
+                    <section className={containerStyles.container}>{children}</section>
                   )
                 }
-
-                export default Home
+                ```
+              </textarea>
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```html
+                <section class="container-module--container--3MbgH"></section>
                 ```
               </textarea>
             </p>
           </section>
+          <section data-markdown>
+            - CSS in JS (JSS)
+            - SASS
+          </section>
+        </section>
+        <!-- Slide 10 -->
+        <section data-markdown>
+          # Folder Structure (DEMO)
+        </section>
+        <!-- Slide 11 -->
+        <section>
+          <section data-markdown>
+            # Testing
+          </section>
           <section>
             <p>
-              Imperatively
+              E2E testing
             </p>
             <p class="fragment fade-in" data-markdown>
-              <textarea data-template>
-                ```js
-                import { useRouter } from 'next/router'
-
-                export default function ReadMore() {
-                  const router = useRouter()
-
-                  return (
-                    <button onClick={() => router.push('/about')}>
-                      Click here to read more
-                    </button>
-                  )
-                }
-                ```
-              </textarea>
+              <a href="https://www.cypress.io/" target="_blank">https://www.cypress.io/</a>
+            </p>
+          </section>
+          <section>
+            <p>
+              Unit testing
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              Jest & React Testing Library
+            </p>
+          </section>
+          <section>
+            <p>
+              Regarding Enzyme...
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <a href="https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl" target="_blank">https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl</a>
             </p>
           </section>
         </section>
