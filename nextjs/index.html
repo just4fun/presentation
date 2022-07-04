@@ -69,8 +69,8 @@
             ## Align Apps
           </section>
           <section data-markdown>
-            ![smile_view](https://user-images.githubusercontent.com/7512625/177044533-8e7f4476-0a82-41d4-ae0d-0f6c7a4d3648.png)
-            [https://smile-view.invisalign.com.sg/?campaign_name=SmileView-Consumer_SG_Singapore-Consumer](https://smile-view.invisalign.com.sg/?campaign_name=SmileView-Consumer_SG_Singapore-Consumer)
+            ![smile_view](https://user-images.githubusercontent.com/7512625/177091779-09b05321-8a4f-4c18-9b0a-7754fc483d81.jpeg)
+            Smile View
           </section>
           <section>
             <h3>
@@ -109,7 +109,7 @@
             [https://www.invisalign.com.sg/](https://www.invisalign.com.sg/)
           </section>
           <section data-markdown>
-            ![itero.com](https://user-images.githubusercontent.com/7512625/177046721-803ffedc-64e0-4347-950b-08b3c93e2950.png)
+            ![itero.com](https://user-images.githubusercontent.com/7512625/177076563-92c5b405-3747-44bb-8dd9-f9cde9510502.png)
             [https://itero.com/en-APAC](https://itero.com/en-APAC)
           </section>
         </section>
@@ -183,7 +183,7 @@
                       console.log(err);
                       return res.status(500).send("Some error happened");
                     }
-                    return res.send(ReactDOMServer.renderToString(<App name="Saeloun" />)
+                    return res.send(ReactDOMServer.renderToString(<App name="just4fun" />)
                     )
                   });
                 });
@@ -350,14 +350,49 @@
               </textarea>
             </p>
           </section>
-          <section data-markdown>
-            - CSS in JS (JSS)
-            - SASS
+          <section>
+            <p>
+              CSS in JS (JSS)
+            </p>
+            <p class="fragment fade-in">
+              e.g. <a href="https://reactnative.dev/docs/style" target="_blank">React Native</a>
+            </p>
+            <p class="fragment fade-in">
+              e.g. <a href="https://mui.com/material-ui/guides/interoperability/#styled-components" target="_blank">Material UI</a>
+            </p>
+          </section>
+          <section>
+            <p>
+              SASS
+            </p>
+            <p class="fragment fade-in">
+              You already know.
+            </p>
           </section>
         </section>
         <!-- Slide 10 -->
-        <section data-markdown>
-          # Folder Structure (DEMO)
+        <section>
+          <section data-markdown>
+            # Folder Structure (DEMO)
+          </section>
+          <section>
+            <p>
+              Rails
+            </p>
+            <div class="fragment fade-in r-stack">
+              <img class="fragment" src="https://user-images.githubusercontent.com/7512625/177093804-4db3058e-75e6-46ef-a9bc-96c3c9ef265c.jpeg">
+              <img class="fragment" src="https://user-images.githubusercontent.com/7512625/177095694-eab71d7a-9a69-4011-84d9-4c7266679751.jpeg">
+            </div>
+          </section>
+          <section>
+            <p>
+              Next.js
+            </p>
+            <div class="fragment fade-in r-stack">
+              <img class="fragment" src="https://user-images.githubusercontent.com/7512625/177093843-76c88c03-e9c1-472a-80b0-5567b955e9fd.jpeg">
+              <img class="fragment" src="https://user-images.githubusercontent.com/7512625/177095541-5c203934-285b-438e-9cef-493fe7e4a127.jpeg">
+            </div>
+          </section>
         </section>
         <!-- Slide 11 -->
         <section>
@@ -371,23 +406,74 @@
             <p class="fragment fade-in" data-markdown>
               <a href="https://www.cypress.io/" target="_blank">https://www.cypress.io/</a>
             </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```js
+                describe('Navigation', () => {
+                  it('should navigate to the about page', () => {
+                    // Start from the index page
+                    cy.visit('http://localhost:3000/')
+                
+                    // Find a link with an href attribute containing "about" and click it
+                    cy.get('a[href*="about"]').click()
+                
+                    // The new url should include "/about"
+                    cy.url().should('include', '/about')
+                
+                    // The new page should contain an h1 with "About page"
+                    cy.get('h1').contains('About Page')
+                  })
+                })
+                ```
+              </textarea>
+            </p>
           </section>
           <section>
             <p>
               Unit testing
             </p>
             <p class="fragment fade-in" data-markdown>
-              Jest & React Testing Library
+              [https://jestjs.io/](https://jestjs.io/)
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              [https://testing-library.com/docs/react-testing-library/intro/](https://testing-library.com/docs/react-testing-library/intro/)
+            </p>
+            <p class="fragment fade-in" data-markdown>
+              <textarea data-template>
+                ```js
+                import { render, screen } from '@testing-library/react'
+                import Home from '@/pages/index'
+
+                describe('Home', () => {
+                  it('renders a heading', () => {
+                    render(<Home />)
+
+                    const heading = screen.getByRole('heading', {
+                      name: /welcome to next\.js!/i,
+                    })
+
+                    expect(heading).toBeInTheDocument()
+                  })
+                })
+                ```
+              </textarea>
             </p>
           </section>
           <section>
             <p>
               Regarding Enzyme...
             </p>
-            <p class="fragment fade-in" data-markdown>
+            <p class="fragment fade-in">
               <a href="https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl" target="_blank">https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl</a>
             </p>
+            <p class="fragment fade-in">
+              <a href="https://testing-library.com/docs/react-testing-library/migrate-from-enzyme" target="_blank">https://testing-library.com/docs/react-testing-library/migrate-from-enzyme</a>
+            </p>
           </section>
+        </section>
+        <!-- Slide 10 -->
+        <section data-markdown>
+          # Q & A
         </section>
       </div>
     </div>
