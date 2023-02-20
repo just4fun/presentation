@@ -96,7 +96,12 @@
           </section>
 					<section>
 						<p data-markdown>
-							- Regression test for each release train by QA
+							- Regression test for each release train - QA
+						</p>
+          </section>
+					<section>
+						<p data-markdown>
+							- Communication with each dev & Release branch preparation & Release - Release Train Engineer
 						</p>
           </section>
 					<section>
@@ -104,6 +109,73 @@
 							- Document the approvals / Testing Report / Testing Sign-off
 						</p>
           </section>
+        </section>
+				<!-- Slide 6 -->
+        <section>
+          <section data-markdown>
+            # Improvements
+          </section>
+					<section>
+						<p data-markdown>
+							- Release schedule is fixed
+						</p>
+						<div class="fragment fade-in" data-markdown>
+							Marketing teams won't introduce urgent ticket during a sprint, as they know the train already departed.
+						</div>
+          </section>
+					<section>
+						<p data-markdown>
+							- PROD support tickets reduced
+						</p>
+          </section>
+        </section>
+				<!-- Slide 7 -->
+        <section>
+          <section data-markdown>
+            # Side Effects
+          </section>
+					<section>
+						<p data-markdown>
+							- Regression test costs much time
+						</p>
+						<div class="fragment fade-in" data-markdown>
+							Until we introduce automation to cover.
+						</div>
+          </section>
+					<section>
+						<p data-markdown>
+							- One more role with additional responsibility - Release Train Engineer
+						</p>
+          </section>
+        </section>
+				<!-- Slide 8 -->
+        <section>
+          <section data-markdown>
+            # FAQ
+          </section>
+					<section>
+						<p data-markdown>
+							How the PROD issue release works with release train?
+						</p>
+						<div class="fragment fade-in" data-markdown>
+							- Created a new fix version on JIRA. e.g. EMT_2023_01.01
+						</div>
+						<div class="fragment fade-in" data-markdown>
+							- Follow git flow, create hotfix then merge to master. After release, merge it back to develop branch.
+						</div>
+          </section>
+					<section>
+						<p data-markdown>
+							What about if QA doesn't have enough capacity to run regerssion test?
+						</p>
+						<div class="fragment fade-in" data-markdown>
+							- Release train is controlled by dev team. If no enough capacity to run regression test, We will only run functional tests, or we ask BA to help on testing, or even postpone the release train (need to align with marketing team ahead).
+						</div>
+          </section>
+        </section>
+				<!-- Slide 9 -->
+        <section data-markdown>
+					# Q & A
         </section>
 			</div>
 		</div>
