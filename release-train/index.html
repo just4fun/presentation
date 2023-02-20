@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/moon.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				 <!-- Slide 1 -->
+				 <section data-markdown>
+          # Release Train
+          #### Zoro Jiang
+          #### Feb 20 2023
+        </section>
+        <!-- Slide 2 -->
+        <section>
+          <section data-markdown>
+            # What
+          </section>
+          <section>
+            <p>
+							<img src="https://user-images.githubusercontent.com/7512625/219987638-5b2fb520-e2a8-45ea-9804-82ae5eeafb8d.png" width="400">
+						</p>
+						<p class="fragment fade-in">
+              Software Release Life Cycle
+            </p>
+						<p class="fragment fade-in">
+							An <span style="color: red">initiative</span> to align and manage the software releases that happen in company to EMT project.
+						</p>
+          </section>
+        </section>
+				<!-- Slide 3 -->
+        <section>
+          <section data-markdown>
+            # Why
+          </section>
+					<section data-markdown>
+						- Lack of Tracking
+						- Lack of Transparency
+						- Human Error
+						- Production Incidents
+					</section>
+        </section>
+				<!-- Slide 4 -->
+        <section>
+          <section data-markdown>
+            # When
+          </section>
+          <section>
+            <p>
+							EMT_2022_01.00 was started at June 3 2022.
+						</p>
+						<p class="fragment fade-in">
+              We had 14 releases in 2022.
+            </p>
+						<p class="fragment fade-in">
+							EMT_2023_02.00 will be released at early Mar.
+						</p>
+          </section>
+        </section>
+				<!-- Slide 5 -->
+        <section>
+          <section data-markdown>
+            # How
+          </section>
+          <section>
+						<p>
+							<img src="https://user-images.githubusercontent.com/7512625/219992541-0386be18-ab2d-40cb-83b6-170ed836c183.png" width="700">
+						</p>
+          </section>
+					<section>
+						<p data-markdown>
+							- Track the production release via JIRA Fix Version
+						</p>
+						<p class="fragment fade-in" data-markdown>
+							https://jira.aligntech.com/projects/APW/versions/233251
+						</p>
+          </section>
+					<section>
+						<p data-markdown>
+							- Track the version of production release package
+						</p>
+						<p class="fragment fade-in" data-markdown>
+							https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+						</p>
+          </section>
+					<section>
+						<p data-markdown>
+							- Regression test for each release train by QA
+						</p>
+          </section>
+					<section>
+						<p data-markdown>
+							- Document the approvals / Testing Report / Testing Sign-off
+						</p>
+          </section>
+        </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
